@@ -111,6 +111,7 @@ def insertion_sort(arr):
       arr[i] = arr[i - 1]
       i -= 1
     arr[i] = to_insert
+  return arr
 
 print(insertion_sort([7,4,5,3,1]))
 ```
@@ -154,7 +155,7 @@ print(insertion_sort([7,4,5,3,1]))
 - 내부 루프(비교 후 shift) : 처음 외부 루프에서 1회 , 두 번째 외부 루프에서 2회, ... n-1 번째 외부 루프에서 n-1회 = n(n-1) / 2
 - 자리 교환 : 외부 루프의 시행순번을 k 라고 하면 모든 외부 루프당 (k+1) 번 일어남
 
-  **총 소요 시간 : n(n-1) / 2 + n(k+1**
+  **총 소요 시간 : n(n-1) / 2 + n(k+1)**
 
 따라서 시간복잡도는  
 - 최선 : **O(n)**
