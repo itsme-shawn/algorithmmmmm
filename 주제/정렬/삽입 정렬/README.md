@@ -28,7 +28,7 @@
 
 <br>
 
- ![선택정렬](./insertion_sort.png "selection-sort")
+ ![삽입정렬](./insertion_sort.png "insertion-sort")
 <br>
 
 ## 📝 예제
