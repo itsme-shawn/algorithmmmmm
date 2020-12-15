@@ -90,7 +90,6 @@ def insertion_sort(arr):
 
 print(insertion_sort([7,4,5,3,1]))
 
-print(insertion_sort([7,4,5,3,1]))
 ```
 
 ### Solution
