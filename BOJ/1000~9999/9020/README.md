@@ -1,4 +1,4 @@
-- 📅 Date: 2020-12-15 (화)
+📅 Date: 2020-12-15 (화)
 
 # 9020. 골드바흐의 추측
 출처: https://www.acmicpc.net/problem/9020
@@ -35,11 +35,16 @@
 5 11
 ```
 
-## 💡 Submit
-### Solved code 1
-(Important part only)
+# ✅ Submit
+## 👌 Solved Code 1
 
-모든 수마다 그때그때마다 소수 판단
+### 💡 Idea
+
+테스트케이스를 2로 나눈 다음, 해당 값와 나머지 값(=전체 - 해당 값) 에 대해 모두 그때그때마다 소수검사(`isPrime()`)를 한다.  
+둘 중에 하나라도 소수가 아니면 해당 값을 1씩 줄여가며 반복한다.
+
+### 💻 Code
+(Important part only)
 ``` python
 import sys
 import math
@@ -66,16 +71,23 @@ for i in range(T):
 
 ```
 
-### Solution
-- 
+### ✍ Solution
+Idea 에 적은 설명으로 충분
 
-### Commentary
+### 💬 Commentary
+- 특정 수가 소수인지 검사할 때 특정 수의 제곱근(sqrt)까지만 검사해보면 된다. (제곱근 함수(`math.sqrt()`) math 모듈 사용)
+- int 로 형 변환 안시켜줘서 처음에 에러났음.
+- 특정 수가 소수인지 그때그때마다 함수를 호출해서 검사하기 때문에 시간복잡도가 다소 높음. => Solved Code 2 방식 (에라토스테네스의 체 아이디어) 로 개선
 
+<br>
 
-### Solved code 2
+## 👌 Solved Code 2
+
+### 💡 Idea
+전체적인 로직은 Solved Code 1 과 동일한데, 소수 판정 방식만 에라토스테네스의 체로 전체 소수 리스트를 만든 다음에 리스트에서 소수 여부 확인하는 방식으로 변경
+
+### 💻 Code
 (Important part only)
-
-에라토스테네스의 체로 소수 리스트를 만든 다음에 리스트에서 소수 여부 확인
 
 ``` python
 # 에라토스테네스의 체 방법 사용
@@ -108,13 +120,14 @@ for i in range(T):
       check -= 1
 ```
 
-### Solution
-- 
+### ✍ Solution
+- 테스트케이스 input 값을 배열로 받은 다음에, 그 중에 가장 큰 값을 MAX 에 할당함 -> primeList 를 최대한 효율적으로 만들기 위함.
+- 에라토스테네스의 체 아이디어를 사용하여 소수 리스트(primeList)를 생성함.
 
-### Commentary
-- 
+### 💬 Commentary
+- Solve Code 1 방식보단 시간복잡도가 확실히 줄어들었다.
 
-### References
+## References
 - [소수찾기 - 에라토스테네스의 체](https://leedakyeong.tistory.com/entry/python-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4)
 - [2. 소수 구하기 - 에라토스테네스의 체](https://wikidocs.net/21638)
 - [소수판정](http://www.ktword.co.kr/abbr_view.php?m_temp1=6177)

@@ -1,26 +1,66 @@
-- 📅 Date: 
+📅 Date: 202x-xx-xx (x)
 
-# Title_here
+# 0000. ~~~
 출처: 
 
 ## 📝 Problem
 
+### 문제
+
+### 입력
+
+
+### 출력
+
 ## Input/Output example
 ### Input
 
-### Output
-
-## 💡 Submit
-### Solved code
-(Important part only)
-``` python
 ```
 
-### Solution
+```
+
+### Output
+```
+
+```
+
+# ✅ Submit
+## 👌 Solved Code 1
+
+### 💡 Idea
+
+
+
+### 💻 Code
+(Important part only)
+``` python
+
+```
+
+### ✍ Solution
+
+
+### 💬 Commentary
+
+
+<br>
+
+## 👌 Solved Code 2
+
+### 💡 Idea
+
+
+### 💻 Code
+(Important part only)
+
+``` python
+
+```
+
+### ✍ Solution
 - 
 
-### Commentary
+### 💬 Commentary
 - 
 
-### References
-- (If there is any reference)
+## References
