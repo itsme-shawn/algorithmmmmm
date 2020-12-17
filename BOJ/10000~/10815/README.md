@@ -129,5 +129,88 @@ for i in range(len(check)):
 ```
 위처럼 return 문을 안쓰면 직전 호출스택으로 돌아가도 남은 코드를 실행하기 때문에 while문에서 무한루프가 돌게된다.
 
+<br>
+
+## 재귀함수 보충예제
+
+### 재귀호출 시 return문을 사용한 경우
+```python
+def hello(n):
+  if(n==0):
+    return
+  
+  return hello(n-1)
+  print('hello '+str(n))
+  
+hello(5) # 아무것도 나오지 않음
+print(hello(5)) # None
+```
+return 문으로 함수를 재귀호출하면, 콜스택을 나중에 불러올 때 return 문 아래의 코드는 실행되지 않는다.
+
+### 재귀호출 시 return문 사용하지 않는 경우
+```python
+def hello(n):
+  if(n==0):
+    return
+  
+  hello(n-1)
+  print('hello '+str(n))
+  
+hello(5)
+'''
+hello 1
+hello 2
+hello 3
+hello 4
+hello 5
+'''
+
+print(hello(5))
+'''
+hello 1
+hello 2
+hello 3
+hello 4
+hello 5
+None
+'''
+
+```
+return 문을 사용하지 않으면, 해당 스택에서의 함수 코드를 모두 실행하고 종료된다.
+더불어서 n=0 일 때 아무것도 return 하지 않기 때문에, print() 를 하게 되면 None 이 출력된다.
+
+### 번외 : 재귀호출과 print() 순서를 바꿨을 때
+  
+```python
+def hello(n):
+  if(n==0):
+    return
+  
+  print('hello '+str(n))
+  hello(n-1)
+  
+hello(5)
+'''
+hello 5
+hello 4
+hello 3
+hello 2
+hello 1
+'''
+
+print(hello(5))
+'''
+hello 5
+hello 4
+hello 3
+hello 2
+hello 1
+None
+'''
+```
+
+print() 를 먼저하고 재귀호출을 하기 때문에, 5부터 print 가 된다.
+
+
 ## References
 [함수 호출의 원리 및 재귀호출](http://10bun.tv/beginner/episode-4/#%ED%95%B5%EC%8B%AC-%EA%B0%95%EC%9D%98)
