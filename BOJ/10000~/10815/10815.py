@@ -16,7 +16,7 @@ def binary_search(arr, target, start=0, end=None):
   mid = (start + end ) // 2
   while (start <= end) :
     if (arr[mid] < target):
-      return binary_search(arr, target, mid+1, end)
+      return binary_search(arr, target, mid+1, end) 
     elif (arr[mid] > target):
       return binary_search(arr, target, start, mid-1)
     else: # find
