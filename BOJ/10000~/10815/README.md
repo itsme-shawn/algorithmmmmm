@@ -95,6 +95,39 @@ int sum(int n)
 }
 ```
 ![재귀이해](./recursive.png)
+- 함수를 재귀호출 할 때, **return 문을 사용하는 것**과 **사용안하는 것**의 기능차이를 이해해야한다. return 문은 직전 호출 스택에 return 값을 전달하고 현 스택에서의 함수를 바로 종료시킨다.하지만 return 문을 안쓰게 되면 직전 호출 스택에 return 값을 전달하지 않을 뿐더러, 기존 스택에서의 미실행코드를 계속 시키게 된다.
+- binary_search 같은 경우,
+```python
+import sys
+# sys.setrecursionlimit(1500)
+
+N = int(input())
+own = list(map(int, sys.stdin.readline().split()))
+M = int(input())
+check = list(map(int, sys.stdin.readline().split()))
+
+own.sort()
+
+# 이진탐색 재귀
+def binary_search(arr, target, start=0, end=None):
+  if end==None :
+    end = len(arr) - 1
+
+  mid = (start + end ) // 2
+  while (start <= end) :
+    if (arr[mid] < target):
+      binary_search(arr, target, mid+1, end) * 10
+    elif (arr[mid] > target):
+      binary_search(arr, target, start, mid-1)
+    else: # find
+      return 1
+  return 0
+
+for i in range(len(check)):
+  print(binary_search(own, check[i]), end=' ')
+
+```
+위처럼 return 문을 안쓰면 직전 호출스택으로 돌아가도 남은 코드를 실행하기 때문에 while문에서 무한루프가 돌게된다.
 
 ## References
 [함수 호출의 원리 및 재귀호출](http://10bun.tv/beginner/episode-4/#%ED%95%B5%EC%8B%AC-%EA%B0%95%EC%9D%98)
