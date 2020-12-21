@@ -5,10 +5,11 @@ def merge_sort(arr, start=None, end=None):
     end = len(arr) - 1
   
   if (start < end):
-    mid = start + (end - start) // 2  # mid = (start + end) // 2 와 동일 (오버플로우 방지 스킬)
-    merge_sort(arr, start, mid) # 분할(Divide) : 왼쪽 리스트
-    merge_sort(arr, mid+1, end) # 분할(Divide) : 오른쪽 리스트
-    merge(arr, start, mid, end) # 정복(Conquer)
+    mid = start + (end - start) // 2  # 분할(Divide)
+    # mid = (start + end) // 2 와 동일 (오버플로우 방지 스킬)
+    merge_sort(arr, start, mid) # 정복(Conquer) : 왼쪽 리스트 정렬
+    merge_sort(arr, mid+1, end) # 정복(Conquer) : 오른쪽 리스트 정렬
+    merge(arr, start, mid, end) # 결합(Combine)
 
 def merge(arr, start, mid, end):
   for i in range(start, end+1):

@@ -22,11 +22,11 @@ def merge_sort(arr):
   if(len(arr) <= 1):
     return arr
   
-  mid_idx = len(arr) // 2
+  mid_idx = len(arr) // 2 # 분할
 
-  left = merge_sort(arr[0:mid_idx])         # 왼쪽 부분 리스트 분할
-  right = merge_sort(arr[mid_idx:len(arr)]) # 오른쪽 부분 리스트 분할
-  return merge(left, right)
+  left = merge_sort(arr[0:mid_idx])         # 정복 : 왼쪽 부분배열 정렬
+  right = merge_sort(arr[mid_idx:len(arr)]) # 정복 : 오른쪽 부분배열 정렬
+  return merge(left, right) # 결합 : 정렬된 왼쪽,오른쪽 부분배열 결합
 
 print(merge_sort([30, 50, 80, 90, 10, 0, 20]))
 
