@@ -14,7 +14,7 @@
 
 > 알고리즘은 일반적인 데스크탑 어플리케이션이나, 시간이 중요한 서비스( 지도 길찾기 서비스, 실시간 스트리밍 서비스 ..) 등에만 중요한 것이 아니라 Web 에도 중요하다. 브라우저가 사용할 수 있는 메모리는 일반적인 데스크탑 어플리케이션 보다 작은데, 이유는 웹 페이지에서 실행되는 자바스크립트가 시스템 메모리를 전부 사용해서 OS가 다운되는 것을 막기 위함이다. 즉, Web에서도 좋은 알고리즘을 사용해야 페이지의 성능을 올릴 수 있다.
 
-## 시간복잡도 (Time Complexity)
+## 2. 시간복잡도 (Time Complexity)
 
 시간복잡도란 알고리즘이 문제를 해결하기 위한 **시간(연산)의 횟수** 를 말한다.
 시간복잡도를 측정할 때 시간을 직접 측정하기 보다는 **input 에 따른 연산의 횟수**로 측정하게 된다.  
@@ -35,7 +35,10 @@ Program Step 에서 기본 단위(Elementary Operation)는
 4. 함수호출
    
 정도로 나눌 수 있겠다.
-Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수를 측정하면 된다. 기본적으로 단순 대입, 비교, 산술연산을 실행할 때마다 1씩 카운팅을 해주면 된다.
+Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수를 측정하면 된다. 기본적으로 단순 대입, 비교, 산술연산을 실행할 때마다 1씩 카운팅을 해주면 된다.  
+
+> 💡 Tip  
+반복문의 반복횟수와 내장함수나 키워드 같은 input 의 크기에 영향을 많이 받는 코드를 위주로 시간복잡도를 계산하면 된다.
 
 예시로 선형 탐색과 이분 탐색의 시간복잡도를 계산해보자.
 
@@ -51,7 +54,7 @@ Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수�
 
 <br>
 
-## 점근적 표기법(Asymptotic notation)
+## 3. 점근적 표기법(Asymptotic notation)
 
 시간복잡도를 측정하는데 있어서 두 가지 포인트가 있다.  
 첫 번째는 **입력값의 크기에 대한 함수 형태**로 나타내야 한다는 것이다.  
@@ -66,7 +69,7 @@ Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수�
 
 ### 오메가 표기법 (Big-Ω Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='60%' ></p> 
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='40%' ></p> 
  
 참고 : 그래프 상에서 y값이 클수록 안 좋은 알고리즘(시간이 많이 걸림)
 * 최상의 경우를 표현
@@ -82,7 +85,7 @@ n 값이 작을 때는 고려하지않고, n 값이 충분히 클 때(>=n0) 만�
 
 ### 빅오 표기법 (Big-O Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='60%' ></p>  
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='40%' ></p>  
 
 * 최악의 경우를 표현
 * 점근적 상한선
@@ -101,7 +104,7 @@ Big-O 로 시간복잡도를 표현하게 되면 최악의 경우까지 커버�
 
 ### 세타 표기법 (Big-θ Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/theta_notation.png' width='60%' ></p>  
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/theta_notation.png' width='40%' ></p>  
 
 * 평균의 경우를 표현
 * 점근적 상한선과 점근적 하한선의 교집합
@@ -115,6 +118,20 @@ ex)  이진 탐색의 최악의 실행 시간은 Θ(![수식](./imgs/eq4.svg)) �
 ex) 이진 탐색이 항상 O(![수식](./imgs/eq4.svg)) 안에 실행되는 것은 맞지만, 항상 Θ(![수식](./imgs/eq4.svg)) 시간에 실행되는 것은 아님 ( 최상의 경우 상수시간에도 실행됨) 
 
 <br>
+
+## 4. 파이썬 내장함수 / 키워드의 시간복잡도
+
+input 크기와 상관없이 실행되는 코드만 O(1) 이고, input 에 영향을 받는 코드라면 시간 복잡도를 따져봐야 한다.  
+파이썬의 내장함수는 일반적으로 O(![](./imgs/eq5.svg)) 이상으로 느려지진 않는다.  
+
+[파이썬 기본 연산자들의 시간 복잡도 정리](https://m.blog.naver.com/PostView.nhn?blogId=complusblog&logNo=221204308911&proxyReferer=https:%2F%2Fwww.google.com%2F) 를 참고하자.
+
+<br>
+
+## 5. 공간복잡도 (Space Complexity)
+
+공간복잡도 또한 input 크기에 따라 알고리즘이 사용하는 메모리 공간을 측정하기 위한 척도이다.  
+공간복잡도도 시간복잡도와 마찬가지로 점근 표기법을 사용할 수 있기에 Big-O 표기법을 사용할 수 있다.
 
 ## Tip
 
