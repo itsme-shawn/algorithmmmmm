@@ -24,7 +24,7 @@
 2. 최악의 경우 (Worst Case)
 3. 평균의 경우 (Average Case)  
 
-가 있는데, **최악의 경우**로 알고리즘의 시간복잡도를 평가한다.
+가 있는데, **최악의 경우**로 알고리즘의 시간복잡도를 평가한다.  
 
 ### 연산 횟수는 어떻게 측정할까?
 
@@ -35,20 +35,33 @@ Program Step 에서 기본 단위(Elementary Operation)는
 4. 함수호출
    
 정도로 나눌 수 있겠다.
-Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수를 측정하면 된다. 기본적으로 단순 대입, 비교, 산술연산은 O(1) 이다.
+Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수를 측정하면 된다. 기본적으로 단순 대입, 비교, 산술연산을 실행할 때마다 1씩 카운팅을 해주면 된다.
 
 예시로 선형 탐색과 이분 탐색의 시간복잡도를 계산해보자.
 
 * 예시1) 선형탐색 시간복잡도 계산
-![선형탐색](./binary_search.JPG)
+![선형탐색](./linear_search.JPG)
 * 예시2) 이분탐색 시간복잡도 계산
-![이분탐색](./linear_search.JPG)
+![이분탐색](./binary_search.JPG)
 * 예시3)
-![](https://feel5ny.github.io/images/post_img/48/01.png)
+![sum](https://feel5ny.github.io/images/post_img/48/01.png)
+
 
 ## 점근적 표기법(Asymptotic notation)
+
+시간복잡도를 측정하는데 있어서 두 가지 포인트가 있다.  
+첫 번째는 **입력값의 크기에 대한 함수 형태**로 나타내야 한다는 것이다.  
+두 번째는 **입력값의 크기에 따라 함수가 얼마나 빨리 커지는지** 알아보는 것이다. 이것을 *성장률* 또는 *성장성* 이라고 한다.  
+바로 이 두 번째 포인트에서 점근적 표기법의 필요성이 대두된다.  
+
+입력값 크기 n 에 대하여 ![수식](./eq1.svg) 의 시간복잡도를 가진 알고리즘이 있다고 가정해보자.(첫 번째 포인트) 성장률의 관점에서 볼 때, n 이 매우 커지면 ![수식](./eq2.svg) 의 성장률이 ![수식](./eq3.svg) 보다 훨씬 크다. 여기서 계수는 큰 의미가 없으므로 ![수식](./eq1.svg) 시간복잡도는, ![수식](./eq2.svg) 로 표기할 수 있다. 이처럼 상수 계수와 중요하지 않은 항목을 제거한 것을 **점근적 표기법(asymptotic notation)** 이라고 한다. **점근적 표기법(asymptotic notation)** 에는 3 가지 형태가 있다.
+- 최상의 경우 : 오메가 표기법 (Big-Ω Notation)
+- 최악의 경우 : 빅오 표기법 (Big-O Notation)
+- 평균의 경우 : 세타 표기법 (Big-θ Notation)
+
 
 ## Reference
 - [알고리즘과 시간 복잡도](https://feel5ny.github.io/2017/12/09/CS_01/)
 - [[Algorithm] 알고리즘을 위한 시간복잡도 계산 방법 - Big-O 표기](https://seolhun.github.io/contents/algorithm-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%84%EC%82%B0-%EB%B0%A9%EB%B2%95-big-o-%ED%91%9C%EA%B8%B0)
 - [<Time Complexity : 시간복잡도> 구하는 법 + 코딩 팁](https://mimimimamimimo.tistory.com/2)
+- [점근적 표기법](https://ko.khanacademy.org/computing/computer-science/algorithms/asymptotic-notation/a/asymptotic-notation)
