@@ -66,7 +66,7 @@ Program Step 을 따라가면서 이 모든 기본단위들이 일어나는 수�
 
 ### 오메가 표기법 (Big-Ω Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='60%' ></p> 
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='40%' ></p> 
  
 참고 : 그래프 상에서 y값이 클수록 안 좋은 알고리즘(시간이 많이 걸림)
 * 최상의 경우를 표현
@@ -82,7 +82,7 @@ n 값이 작을 때는 고려하지않고, n 값이 충분히 클 때(>=n0) 만�
 
 ### 빅오 표기법 (Big-O Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='60%' ></p>  
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/o_notation.png' width='40%' ></p>  
 
 * 최악의 경우를 표현
 * 점근적 상한선
@@ -101,7 +101,7 @@ Big-O 로 시간복잡도를 표현하게 되면 최악의 경우까지 커버�
 
 ### 세타 표기법 (Big-θ Notation)
 
-<p align='center'><img src='https://feel5ny.github.io/images/post_img/48/theta_notation.png' width='60%' ></p>  
+<p align='left'><img src='https://feel5ny.github.io/images/post_img/48/theta_notation.png' width='40%' ></p>  
 
 * 평균의 경우를 표현
 * 점근적 상한선과 점근적 하한선의 교집합
