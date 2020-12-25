@@ -15,56 +15,45 @@
  그렇게 계속 문을 열다보면 마지막 문이라는 신호(원하는 값을 찾게 됨)를 받게 되고, 그때부터는 이제 가장 마지막에 연 문부터 차레대로 닫고 나오면 된다.  
 
  방금 비유한 설명을 팩토리얼 재귀구현의 실제 콜스택으로 보면 아래와 같다.
- <p align='center'><img src="https://i.stack.imgur.com/PK6Ht.png" width='50%'/></p>
-
- ### 재귀 구현 시 주의사항
-
- 
+ <p align='center'><img src="https://i.stack.imgur.com/PK6Ht.png" width='60%'/></p>
 
 <br>
 
-## 📝 예제
+ ## 재귀 구현 시 주의사항
+
+1. **탈출 조건(base case)을 걸어서 재귀호출을 끝내야 한다는 것**
+2. **재귀 함수에 들어가는 파라미터 값이 계속해서 변해야 한다는 것**
+
+1번의 탈출 조건이 없으면 함수가 무한 루프를 돌게 되고, 마찬가지로 2번에서 파라미터 값이 계속 동일하다면 이 역시 함수가 무한 루프를 돌게 될 것이다.  
+
+재귀함수를 구현 할 때, 이 2가지 조건은 항상 충족되어야 한다.
+
+<br>
+
+## 재귀 vs 반복문
 
 
-### 문제
+<br>
 
-### 입력
+## 📝 재귀호출을 이용한 팩토리얼 예제
 
+### Code
 
-### 출력
+```python
+def factorial(n):
+  if(n == 0):   # base case ( n == 0 )
+    return 1
+  else:         # recursive case ( n > 0 )
+    return n * factorial(n-1) 
 
-## Input/Output example
-### Input
-
+print(factorial(4))
 ```
 
-```
+> factorial 함수에서 이전 스택의 리턴 값을 계속 사용하기 때문에 이런 경우는 return 문을 반드시 사용해줘야 한다. return 없으면 에러
 
-### Output
-```
-
-```
-
-
-## 👌 풀이
-
-### 💡 Idea
-
-
-### 💻 Code
-(Important part only)
-
-``` python
-
-```
-
-### ✍ Solution
--
-
-### 💬 Commentary
--
+ <p align='center'><img src="./imgs/fact.JPG" width='70%'/></p>
 
 
 
 ## References
-- (If there is any reference)
+- [[개념 이해] 재귀 함수 recursion](https://medium.com/@yejinh/%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4-%EC%9E%AC%EA%B7%80-%ED%95%A8%EC%88%98-recursion-7676d1ed4d6f)
