@@ -32,12 +32,31 @@
 
 ## 재귀 vs 반복문
 
+재귀로 짠 코드는 반복문으로도 짤 수 있고, 반대로 반복문으로 짠 코드는 재귀로도 짤 수 있다.  
+반복문을 쓰는 게 더 가독성이 좋고 효율적이면 반복문을 쓰면 되고, 재귀를 쓰는 게 더 가독성이 좋고 효율적이면 재귀를 쓰면 된다.  
+
+다만 재귀를 너무 많이 호출하면 콜 스택이 계속 쌓이므로 stack overflow 가 발생할 수도 있고, 메모리를 계속 사용하기 때문에 반복문보다 성능이 좋지 않다.
+> ❗ 하지만 **꼬리재귀(Tail recursion)** 방식을 사용한다면 성능도 챙기면서 가독성도 챙길 수 있다.  
+
+<br>
+
+> 💡 **꼬리재귀(Tail recursion)** 방식이란?  
+return 문에서 재귀 호출 시, 추가 연산을 하지 않고 재귀함수만을 return 해서 기존 스택을 재활용할 수 있다. 컴파일러 별로 꼬리 재귀 최적화 설정이 있으므로 설정을 미리 확인해봐야한다.
+
+그렇다면 반복문으로도 짤 수 있는 코드를 왜 굳이 재귀를 이용하는걸까?
+
+1. 알고리즘을 그대로 코드 상으로 자연스럽게 표현할 수 있다. (점화식, 분할정복 등등..)
+2. 반복문으로 짤 수는 있지만 구현하기 어려운 것들을 재귀로는 굉장히 간단히 구현할 수 있다. (quick sort, 하노이의 탑 등등..)
+3. 변수 사용을 줄여줄 수 있어서, 프로그램이 정상적으로 돌아가는지에 대한 증명이 쉬워진다. 즉, 사용하는 변수가 적기 때문에 side effect 가 적어진다.
+4. 앞서 말했던 **꼬리재귀(Tail recursion)**을 사용하게 되면, 성능은 반복문과 다를 바 없는데 코드 상 가독성까지 높일 수 있다.
+
+
 
 <br>
 
 ## 📝 재귀호출을 이용한 팩토리얼 예제
 
-### Code
+### ✅ 일반적인 재귀 방식
 
 ```python
 def factorial(n):
@@ -53,7 +72,68 @@ print(factorial(4))
 
  <p align='center'><img src="./imgs/fact.JPG" width='70%'/></p>
 
+<br>
+
+### ✅ 꼬리 재귀 방식
+
+> 안타깝게도 파이썬 인터프리터는 꼬리 재귀 호출 최적화를 지원하지 않기 때문에 파이썬에서는 의미가 없고, 꼬리재귀를 지원하는 C, C++ 언어 등을 사용하고 컴파일러에서 최적화 설정을 해줘야 한다.
+
+```C 
+#include <stdio.h>
+
+int FactorialTail(int n, int acc){  // acc : accumulator
+	if (n == 1) return acc;
+	return FactorialTail(n - 1, acc * n);    //  일반 재귀에서의 n * Factorial(n-1)와 달리 반환값에서 추가 연산을 필요로 하지 않음
+}
+
+int Factorial(int n){
+  return FactorialTail(n, 1);
+}
+
+int main(){
+  int result = Factorial(4);
+  
+  printf("%d", result);
+  return 0;
+}
+
+```
+
+* 일반적인 재귀 방식과는 다르게 acc 라는 값을 저장하는 변수를 사용하기 때문에 재귀호출을 하게 되는 return 문에서  재귀함수만을 실행하고 있다.
+* return 문에서 함수 호출 외에 추가 연산을 하지 않기 때문에 콜 스택을 쌓지 않고 재활용한다.
+  
+아래의 컴파일러가 해석하는 코드를 보면 일반 재귀호출 과 꼬리 재귀호출의 차이를 더 쉽게 이해할 수 있다.
+
+**컴파일러가 해석하는 일반 재귀호출 코드**
+
+```python
+def factorial(n):
+  if(n == 0):   # base case ( n == 0 )
+    return 1
+  else:         # recursive case ( n > 0 )
+    result = factorial(n-1)
+    return n * result 
+
+print(factorial(4))
+```
+
+**컴파일러가 해석하는 꼬리 재귀호출 코드**
+
+```C
+ // C언어
+ int FactorialTail(int n,int acc){
+	do{
+		if (n == 1) return;
+		acc = acc * n;
+		n = n - 1;
+	} while (true);
+}
+```
+
+보다시피 꼬리 재귀를 사용하게 되면, 재귀호출을 함에도 불구하고 컴파일러는 반복문 형태로 해석하게 된다. 따라서 일반 재귀의 단점인 콜 스택 메모리와 stack overflow 문제를 해결할 수 있다.
 
 
 ## References
 - [[개념 이해] 재귀 함수 recursion](https://medium.com/@yejinh/%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4-%EC%9E%AC%EA%B7%80-%ED%95%A8%EC%88%98-recursion-7676d1ed4d6f)
+- [KLDP 질문글](https://kldp.org/node/134556)
+- [꼬리 재귀 최적화(Tail Recursion)](https://bozeury.tistory.com/entry/%EA%BC%AC%EB%A6%AC-%EC%9E%AC%EA%B7%80-%EC%B5%9C%EC%A0%81%ED%99%94Tail-Recursion)
