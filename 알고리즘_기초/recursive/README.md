@@ -28,6 +28,9 @@
 
 재귀함수를 구현 할 때, 이 2가지 조건은 항상 충족되어야 한다.
 
+> * Recursive case: 현 문제가 너무 커서, 같은 형태의 더 작은 부분 문제를 재귀적으로 푸는 경우  
+> * Base case: 이미 문제가 충분히 작아서, 더 작은 부분 문제로 나누지 않고도 바로 답을 알 수 있는 경우
+
 <br>
 
 ## 재귀 vs 반복문
@@ -49,8 +52,6 @@ return 문에서 재귀 호출 시, 추가 연산을 하지 않고 재귀함수�
 2. 반복문으로 짤 수는 있지만 구현하기 어려운 것들을 재귀로는 굉장히 간단히 구현할 수 있다. (quick sort, 하노이의 탑 등등..)
 3. 변수 사용을 줄여줄 수 있어서, 프로그램이 정상적으로 돌아가는지에 대한 증명이 쉬워진다. 즉, 사용하는 변수가 적기 때문에 side effect 가 적어진다.
 4. 앞서 말했던 **꼬리재귀(Tail recursion)**을 사용하게 되면, 성능은 반복문과 다를 바 없는데 코드 상 가독성까지 높일 수 있다.
-
-
 
 <br>
 
@@ -131,6 +132,44 @@ print(factorial(4))
 ```
 
 보다시피 꼬리 재귀를 사용하게 되면, 재귀호출을 함에도 불구하고 컴파일러는 반복문 형태로 해석하게 된다. 따라서 일반 재귀의 단점인 콜 스택 메모리와 stack overflow 문제를 해결할 수 있다.
+
+<br>
+
+## 재귀함수의 시간복잡도 측정
+
+재귀함수의 시간복잡도 계산 : **(base case의 시간복잡도)** * **(recursive case의 시간복잡도)**
+
+* **팩토리얼 재귀 방식의 시간복잡도**
+  ```py
+  def factorial(n):
+  if(n == 0):   # base case ( n == 0 )
+    return 1
+  else:         # recursive case ( n > 0 )
+    return n * factorial(n-1) 
+
+  print(factorial(4))
+  ```
+  
+  * base case : O(1)
+  * recursive case : O(n) (n번 재귀호출)
+  * 총 시간복잡도 : O(n)
+
+* **피보나치 재귀 방식의 시간복잡도**
+  ```py
+  def fib(n):
+  if(n == 1 or n == 2):   # base case
+    return 1
+  else:                   # recursive case
+    return fib(n-1) + fib(n-2)
+
+  for i in range(1,11):
+    print(fib(i))
+  ```
+  
+  * base case : O(1)
+  * recursive case : O(2^n) (2^(n-2)번 재귀호출)
+  * 총 시간복잡도 : O(2^n)
+
 
 
 ## References
