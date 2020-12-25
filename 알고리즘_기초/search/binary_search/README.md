@@ -47,8 +47,9 @@ None
 <br>
 
 ## 💡 풀이
-### Solved code
-(Important part only)
+
+### 재귀방식
+
 ``` python
 # 재귀
 def binary_search(element, some_list, start_index=0, end_index=None):
@@ -68,10 +69,18 @@ def binary_search(element, some_list, start_index=0, end_index=None):
         start_index = mid + 1
     
     return binary_search(element,some_list,start_index,end_index)
-        
+           
+print(binary_search(2, [2, 3, 5, 7, 11]))
+print(binary_search(0, [2, 3, 5, 7, 11]))
+print(binary_search(5, [2, 3, 5, 7, 11]))
+print(binary_search(3, [2, 3, 5, 7, 11]))
+print(binary_search(11, [2, 3, 5, 7, 11]))
+```
 
+### 반복문 방식
+
+```python
 # 반복문
-'''
 def binary_search(element, some_list):
     start_index = 0
     end_index = len(some_list) - 1
@@ -85,7 +94,6 @@ def binary_search(element, some_list):
         else :      # some_list[mid_index] > element 
             end_index = mid_index - 1
     return None
-'''
     
 print(binary_search(2, [2, 3, 5, 7, 11]))
 print(binary_search(0, [2, 3, 5, 7, 11]))
@@ -93,9 +101,6 @@ print(binary_search(5, [2, 3, 5, 7, 11]))
 print(binary_search(3, [2, 3, 5, 7, 11]))
 print(binary_search(11, [2, 3, 5, 7, 11]))
 ```
-
-### Solution
-- x
 
 ### Commentary
 - 재귀 방식에서는 함수의 파라미터로 `start_index` 와 `end_index` 로 설정해주고,  함수의 파라미터 값을 defulat 값으로 설정하는 idea 중요
