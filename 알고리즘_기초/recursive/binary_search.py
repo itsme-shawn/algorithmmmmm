@@ -18,3 +18,5 @@ print(binary_search(0, [2, 3, 5, 7, 11]))
 print(binary_search(5, [2, 3, 5, 7, 11]))
 print(binary_search(3, [2, 3, 5, 7, 11]))
 print(binary_search(11, [2, 3, 5, 7, 11]))
+
+# 시간복잡도 : 반복문과 마찬가지로 탐색범위가 반절씩 줄기때문에 재귀함수가 lg n 번 호출된다. 따라서 시간복잡도는 O(log n) 이다.
