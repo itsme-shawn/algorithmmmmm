@@ -7,13 +7,14 @@ import sys
 
 N = int(input())  # 숫자 하나 정도는 input() 으로 쓰자.. N : 행 수
 graph = [input() for _ in range(N)]
-'''input
-5
-WLLWWWL
-LLLWLLL
-LWLWLWW
-LWLWLLL
-WLLWLWW
+# graph = [sys.stdin.readline().split()[0] for _ in range(N)]
+
+# extend 이용
+'''
+graph = []
+
+for _ in range(N):
+  graph.extend(sys.stdin.readline().split())
 '''
 
 print(graph)
@@ -38,10 +39,16 @@ print(graph)
 
 # 2. 띄어쓰기없는 문자열/정수를 입력받아서 2차원 배열에 저장
 
-
 M = int(input())
 maze = [list(input()) for _ in range(M)]
-# maze = [list(map(int, input())) for _ in range(M)] : 정수형태로 받고싶을 때
+
+# string 을 list로 형 변환시키면, string 이 문자 개별로 분리되는 성질 이용
+# 정수데이터일때 : maze = [list(map(int, input())) for _ in range(M)]
+
+# sys.stdin.readline().split() 을 사용하면 이미 문자열 통째로 리스트가 만들어지기 때문에 이 경우는 그냥 input() 을 쓰는게 편하다.
+# 굳이 sys 모듈을 쓸꺼면 아래처럼 쓰면 되긴함.
+# maze = [ list(sys.stdin.readline().split()[0]) for _ in range(M)]
+
 
 print(maze)
 
@@ -69,7 +76,6 @@ print(maze)
 # --------------------------------------------
 
 
-
 # 3. 띄어쓰기있는 문자열/정수를 입력받아서 2차원 배열에 저장
 
 K = int(input())
@@ -84,15 +90,13 @@ print(K)
   3
   apple banana mango
   one two three
-  k i n g
 '''
 
 # output:
 '''
 [
   ['apple', 'banana', 'mango'], 
-  ['one', 'two', 'three'], 
-  ['k', 'i', 'n', 'g']
+  ['one', 'two', 'three']
 ]
 
 '''

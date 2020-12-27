@@ -1,6 +1,6 @@
 import sys
 
-# 1. Enter(개행)까지 입력을 받기 때문에 사실상 못 쓴다.
+# 1. Enter(개행)까지 입력을 받기 때문에 사실상 PS 에서는 쓸 일이 거의 없다
 x = sys.stdin.readline()   # input: 1
 
 print(x)  # output: 1\n
