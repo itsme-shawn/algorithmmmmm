@@ -49,14 +49,16 @@
 
 ### partiton 함수 진행 과정
 
-1. 시작
+1. **시작**
     <p align='center'><img src="./imgs/partition3.JPG" width='50%'/></p>
-    Pivot 은 리스트의 맨 오른쪽 요소로 설정하고,  
+    Pivot 은 리스트의 맨 오른쪽 요소로 설정하고, i,b,start 는 시작 인덱스를 할당, p 값에는 끝 인덱스를 할당한다.
 
-    i,b,start 는 시작 인덱스를 할당, p 값에는 끝 인덱스를 할당한다.
+<br>
 
 2. 16 이 7(피벗) 보다 크므로, b 값은 가만히 있고 i(current index)만 증가시킨다.
     <p align='center'><img src="./imgs/partition4.JPG" width='50%'/></p>
+
+<br>
 
 3. 6 은 7(피벗) 보다 작다. 이 부분은 조금 복잡하다.
     <p align='center'><img src="./imgs/partition4_1.JPG" width='50%'/></p>
@@ -65,8 +67,12 @@
       b 가 가리키는 요소와 swap 한 후, b 와 i 를 1씩 증가시킨다.  
       이제 나머지 unknown 그룹을 똑같은 로직으로 처리해나가면 된다.
 
+<br>
+
 4. unknown 그룹까지 모두 Pivot 가 비교가 끝나면, small 그룹과 big 그룹이 아래처럼 나뉘게 된다.
     <p align='center'><img src="./imgs/partition6.JPG" width='50%'/></p>
+
+<br>
 
 5. Pivot 이 small 그룹과 big 그룹의 중간에 들어가야 하기 때문에, b 가 가리키는 요소와 Pivot 을 swap 한다. 이제 Pivot index 값이 b 가 가리키는 값이 된다.
     <p align='center'><img src="./imgs/partition7.JPG" width='50%'/></p>
