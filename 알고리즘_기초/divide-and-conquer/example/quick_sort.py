@@ -45,19 +45,19 @@ def quicksort(lst, start=None, end=None):
 # 테스트 0
 list0 = [1, 6, 5, 3, 4]
 quicksort(list0, 0, len(list0) - 1)
-print(list0)
+print(list0)  # [1, 3, 4, 5, 6]
   
 # 테스트 1
 list1 = [1, 3, 5, 7, 9, 11, 13, 11]
 quicksort(list1)
-print(list1)
+print(list1)  # [1, 3, 5, 7, 9, 11, 11, 13]
 
 # 테스트 2
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort(list2)
-print(list2)
+print(list2)  # [1, 5, 7, 9, 13, 15, 28, 30, 48]
 
 # 테스트 3
 list3 = [2, 5, 6, 7, 1, 2, 4, 7, 10, 11, 4, 15, 13, 1, 6, 4]
 quicksort(list3)
-print(list3)
+print(list3)  # [1, 1, 2, 2, 4, 4, 4, 5, 6, 6, 7, 7, 10, 11, 13, 15]
