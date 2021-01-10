@@ -23,7 +23,7 @@
 4. 부분 리스트들이 더 이상 분할이 불가능할 때까지 반복한다.
    * 리스트의 크기가 0이나 1이 될 때까지 반복한다.
   
-<p align='center'><img src="./imgs/qsort.JPG" width='80%'/></p>
+<p align='center'><img src="./imgs/qsort.JPG" width='50%'/></p>
 
 > 💡 피벗(pivot)을 어떤 것으로 선택하냐에 따라서 퀵 정렬 안에서도 시간복잡도가 달라진다. 일단 나는 리스트의 가장 오른쪽 요소를 피벗으로 선택하는 로직으로 구현했다. 이 외에도 가장 왼쪽을 선택하는 방법, 아예 랜덤으로 피벗을 선택하는 방법도 있다.
 
@@ -35,14 +35,14 @@
 
 퀵 정렬의 분할 로직이 구현되는 partition 함수는 피벗을 기준으로 작은 값은 피벗 왼쪽에, 큰 값은 피벗 오른쪽에 배치되게끔 한다. 
 
-<p align='center'><img src="./imgs/partition1.JPG" width='70%'/></p>
+<p align='center'><img src="./imgs/partition1.JPG" width='50%'/></p>
 
 주의할 점은 배치만 될 뿐, 정렬은 되지 않는다.
 그렇다면 정렬은 언제하는가? 파티션된 리스트에서 재귀적으로 또 다시 퀵 정렬을 돌리면 마지막에 알아서 정렬이 된다.
 
 ### 파티션 그룹
 
-<p align='center'><img src="./imgs/partition2.JPG" width='70%'/></p>
+<p align='center'><img src="./imgs/partition2.JPG" width='50%'/></p>
 
 파티션은 4개 (실제로 존재하는 것은 2개)로 나눌 수 있는데, small 그룹, big 그룹, unknown 그룹, pivot 이다.  
 사실 unknown 그룹은 중간과정에서 아직 탐색하지 않은 그룹을 이름지어 놓은 것이라서 partiton 함수가 최종적으로 끝나면 small group, big 그룹, pivot 만 존재하게 된다.
@@ -50,26 +50,26 @@
 ### partiton 함수 진행 과정
 
 1. 시작
-    <p align='center'><img src="./imgs/partition3.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition3.JPG" width='50%'/></p>
     Pivot 은 리스트의 맨 오른쪽 요소로 설정하고,  
 
     i,b,start 는 시작 인덱스를 할당, p 값에는 끝 인덱스를 할당한다.
 
 2. 16 이 7(피벗) 보다 크므로, b 값은 가만히 있고 i(current index)만 증가시킨다.
-    <p align='center'><img src="./imgs/partition4.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition4.JPG" width='50%'/></p>
 
 3. 6 은 7(피벗) 보다 작다. 이 부분은 조금 복잡하다.
-    <p align='center'><img src="./imgs/partition4_1.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition4_1.JPG" width='50%'/></p>
 
-    <p align='center'><img src="./imgs/partition5.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition5.JPG" width='50%'/></p>
       b 가 가리키는 요소와 swap 한 후, b 와 i 를 1씩 증가시킨다.  
       이제 나머지 unknown 그룹을 똑같은 로직으로 처리해나가면 된다.
 
 4. unknown 그룹까지 모두 Pivot 가 비교가 끝나면, small 그룹과 big 그룹이 아래처럼 나뉘게 된다.
-    <p align='center'><img src="./imgs/partition6.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition6.JPG" width='50%'/></p>
 
 5. Pivot 이 small 그룹과 big 그룹의 중간에 들어가야 하기 때문에, b 가 가리키는 요소와 Pivot 을 swap 한다. 이제 Pivot index 값이 b 가 가리키는 값이 된다.
-    <p align='center'><img src="./imgs/partition7.JPG" width='70%'/></p>
+    <p align='center'><img src="./imgs/partition7.JPG" width='50%'/></p>
 
 
 ## 👌 풀이
