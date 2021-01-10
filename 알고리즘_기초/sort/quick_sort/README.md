@@ -69,7 +69,7 @@
 
 <br>
 
-4. unknown 그룹까지 모두 Pivot 가 비교가 끝나면, small 그룹과 big 그룹이 아래처럼 나뉘게 된다.
+4. unknown 그룹까지 모두 Pivot 과 비교가 끝나면, small 그룹과 big 그룹이 아래처럼 나뉘게 된다.
     <p align='center'><img src="./imgs/partition6.JPG" width='50%'/></p>
 
 <br>
@@ -106,7 +106,7 @@ def partition(lst, start, end):
   pivot_idx = big_idx 
   big_idx += 1  # 이건 안해도 되긴 함
 
-  return pivot_idx
+  return pivot_idx # 정복과정에서 pivot 인덱스를 사용하므로 return 필수!
 
 # 퀵 정렬
 def quicksort(lst, start=None, end=None):
@@ -149,7 +149,12 @@ print(list3)  # [1, 1, 2, 2, 4, 4, 4, 5, 6, 6, 7, 7, 10, 11, 13, 15]
 ```
 
 ### ✍ Solution
-- `partiton` 함수 로직 설명과 주석으로 대체
+- `partiton` 함수 구현이 중요하긴 하지만, 분할정복 알고리즘에서 메인은 **분할**, **정복**, **결합** 을 어떻게 처리할 것이냐 이다.
+  
+  * 분할 : partiton 함수
+  * 정복 : argument 조절해서 quick_sort 재귀호출
+  * 결합 : 따로 필요없음 ( quick_sort 는 원래배열에서 정렬 이루어짐 )
+  
 
 ### 💬 Commentary
 - 두 가지 부분에서 시간이 오래 걸렸다.
