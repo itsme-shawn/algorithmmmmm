@@ -111,7 +111,10 @@ print(result.count(1))
 ## 👌 Solved Code 2
 
 ### 💡 Idea
-Solved Code 1 과 로직은 동일하다. flag 를 사용했고, 재귀함수 한 사이클을 끝내기 위해 return 을 쓰는게 아니라 break 를 사용했다.
+Solved Code 1 과 큰 틀에서 로직은 동일한데, 세부적으로 잡기술(?)만 조금 다르다.  
+* flag 사용
+* 재귀함수 콜스택 알맞게 탈출하기 위해서 return 대신 break 사용 -> 이중 for 문을 탈출해야해서 좀 까다로움
+* 전역변수 사용 ( 함수내에서 global 키워드 사용)
 
 ### 💻 Code
 (Important part only)
@@ -155,7 +158,7 @@ print(cnt_blue)
 ```
 
 ### 💬 Commentary
-- 주석으로 보충
+- 파이썬은 함수 밖 영역에서 변수를 선언한 전역변수는 read 만 되고, write 가 안된다. write 까지 할려면 함수 내에서 global 키워드를 선언해줘야한다.
 
 ## References
 - [풀이 1 참고](https://happylsm76.tistory.com/entry/%EB%B0%B1%EC%A4%80-2630%EB%B2%88%EC%83%89%EC%A2%85%EC%9D%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-Python)
