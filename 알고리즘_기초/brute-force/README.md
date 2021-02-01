@@ -1,6 +1,6 @@
 📅 Date: 2020-12-26 (토)
 
-# 완전 탐색(Brute-force)
+# 완전 탐색 (Brute-force)
 
 ## 🔎 개념
 
