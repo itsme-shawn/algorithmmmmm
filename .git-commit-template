@@ -1,5 +1,5 @@
 # 공부&TIL 메모용 레포 전용 commit template 
-# <type>: <subject>
+# <[type]>: <subject>
 ##### Subject 50 characters ################# ->
 
 
@@ -10,7 +10,6 @@
 
 # --- COMMIT END ---
 # Type can be
-#   BOJ     : BOJ 문제 관련 커밋
 #   new     : 새로운 내용(이론,문제...) 추가
 #   docs    : 문서 작성/수정
 #   fix     : 버그/오타/코드로직 수정
