@@ -1,7 +1,8 @@
 📅 Date: 202x-xx-xx (x)
 
 # 0000. ~~~
-출처: 
+
+출처:
 
 ## 📝 Problem
 
@@ -9,10 +10,10 @@
 
 ### 입력
 
-
 ### 출력
 
 ## Input/Output example
+
 ### Input
 
 ```
@@ -20,29 +21,26 @@
 ```
 
 ### Output
+
 ```
 
 ```
 
 # ✅ Submit
+
 ## 👌 Solved Code 1
 
 ### 💡 Idea
 
-
-
 ### 💻 Code
-(Important part only)
 
-``` python
+```python
 
 ```
 
 ### ✍ Solution
 
-
 ### 💬 Commentary
-
 
 <br>
 
@@ -50,18 +48,18 @@
 
 ### 💡 Idea
 
-
 ### 💻 Code
-(Important part only)
 
-``` python
+```python
 
 ```
 
 ### ✍ Solution
-- 
+
+-
 
 ### 💬 Commentary
-- 
+
+-
 
 ## References
