@@ -6,6 +6,7 @@ cardList = list(map(int, sys.stdin.readline().split()))
 M = int(sys.stdin.readline())
 findList = list(map(int, sys.stdin.readline().split()))
 
+
 # 각 카드별 개수 조사
 count = {}
 for card in cardList:
