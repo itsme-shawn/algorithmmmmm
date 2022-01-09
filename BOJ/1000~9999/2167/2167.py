@@ -15,5 +15,6 @@ for coordinate in c:
     )
     total = 0
     for a in range(i, x + 1):
-        total += sum(arr[a][min(y, j) : max(y, j) + 1])
+        total += sum(arr[a][j : y + 1])
+
     print(total)
