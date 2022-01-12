@@ -10,7 +10,7 @@ for fileNum in range(1, 6):
     n, m = map(int, sys.stdin.readline().split())
     lst = list(map(int, sys.stdin.readline().split()))
 
-    start = min(lst)
+    start = max(lst)
     end = sum(lst)
 
     def check(size):
