@@ -1,5 +1,5 @@
-# input() : 개행문자 \n 안 셈
-# sys.stdin.readline() : 개행문자 까지 같이 셈 => 조심해야함
+# input() : 개행문자 \n 안 들어옴
+# sys.stdin.readline() : 개행문자 까지 같이 들어옴 => 조심해야함
 
 # 정리
 # input() == sys.stdin.readline().rstrip()

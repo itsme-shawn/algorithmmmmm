@@ -9,31 +9,34 @@ N = int(input())  # 숫자 하나 정도는 input() 으로 쓰자.. N : 행 수
 graph = [input() for _ in range(N)]
 # graph = [sys.stdin.readline().split()[0] for _ in range(N)]
 
+# sys.stdin.readline().split() => abc 입력 시, ['abc'] 가 저장
+# sys.stdin.readline().split()[0] => 원소만 뽑아냄. 'abc' 가 저장됨
+
 # extend 이용
-'''
+"""
 graph = []
 
 for _ in range(N):
   graph.extend(sys.stdin.readline().split())
-'''
+"""
 
 print(graph)
 
 # -----------------결과--------------------
 # input:
-'''
+"""
   5
   WLLWWWL
   LLLWLLL
   LWLWLWW
   LWLWLLL
   WLLWLWW
-'''
+"""
 
 # output:
-'''
+"""
   ['WLLWWWL', 'LLLWLLL', 'LWLWLWW', 'LWLWLLL', 'WLLWLWW']
-'''
+"""
 # --------------------------------------------
 
 
@@ -54,17 +57,17 @@ print(maze)
 
 # -----------------결과--------------------
 # input:
-'''
+"""
   5
   WLLWWWL
   LLLWLLL
   LWLWLWW
   LWLWLLL
   WLLWLWW
-'''
+"""
 
 # output:
-'''
+"""
 [
   ['W', 'L', 'L', 'W', 'W', 'W', 'L'], 
   ['L', 'L', 'L', 'W', 'L', 'L', 'L'], 
@@ -72,11 +75,11 @@ print(maze)
   ['L', 'W', 'L', 'W', 'L', 'L', 'L'], 
   ['W', 'L', 'L', 'W', 'L', 'W', 'W']
 ]
-'''
+"""
 # --------------------------------------------
 
 
-# 3. 띄어쓰기있는 문자열/정수를 입력받아서 2차원 배열에 저장
+# 3. 띄어쓰기있는 문자열/정수를 입력받아서 2차원 배열로 저장
 
 K = int(input())
 arr = [list(map(str, sys.stdin.readline().split())) for _ in range(K)]
@@ -86,20 +89,20 @@ print(K)
 
 # -----------------결과--------------------
 # input:
-'''
+"""
   3
   apple banana mango
   one two three
-'''
+"""
 
 # output:
-'''
+"""
 [
   ['apple', 'banana', 'mango'], 
   ['one', 'two', 'three']
 ]
 
-'''
+"""
 # --------------------------------------------
 
 # 참고 : https://johnyejin.tistory.com/62
