@@ -4,16 +4,16 @@ n = int(sys.stdin.readline())
 lst = [int(sys.stdin.readline()) for _ in range(n)]
 stack = []
 res = []
-cur = 1  # 조심
+nxt = 1  # 다음 번에 스택에 담을 숫자
 flag = 0
 
 for x in lst:
-    while cur <= x:
-        stack.append(cur)
+    while nxt <= x: 
+        stack.append(nxt) # nxt 부터 x 까지 스택에 append
         res.append("+")
-        cur += 1
+        nxt += 1 # nxt 1 증가
 
-    if stack[-1] == x:
+    if stack[-1] == x: # pop 가능
         stack.pop()
         res.append("-")
     else:

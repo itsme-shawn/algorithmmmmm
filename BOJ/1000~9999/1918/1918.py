@@ -14,15 +14,11 @@ for i in range(len(string)):
     else:
         if string[i] in high:
             while stack and stack[-1] in high:
-                temp = stack.pop()
-                if temp != "(" and temp != ")":
-                    res.append(temp)
+                res.append(stack.pop())
             stack.append(string[i])
         elif string[i] in low:
             while stack and (stack[-1] in high or stack[-1] in low):
-                temp = stack.pop()
-                if temp != "(" and temp != ")":
-                    res.append(temp)
+                res.append(stack.pop())
             stack.append(string[i])
         elif string[i] == "(":
             stack.append(string[i])
