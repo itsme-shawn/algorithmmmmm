@@ -1,0 +1,7 @@
+res = [0] * 11000
+for num in range(1, 10001):
+    temp = num + sum(list(map(int, list(str(num)))))
+    res[temp] = 1
+for i in range(1, 10001):
+    if res[i] == 0:
+        print(i)
