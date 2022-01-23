@@ -1,3 +1,4 @@
+# DP 풀이 -> ok
 import sys
 
 t = int(sys.stdin.readline())

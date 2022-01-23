@@ -6,7 +6,7 @@ from collections import Counter
 keyList = ["a", "a", "a", "b", "b", "c"]
 
 dic_1 = dict.fromkeys(keyList, 0)
-print(dic_1)  # {'a': 0, 'b': 0, 'c': 0, 'd': 0, 'e': 0}
+print(dic_1)  # {'a': 0, 'b': 0, 'c': 0}
 
 # 2. 일반적인 방식으로 딕셔너리 생성 => 데이터까지 한 번 삽입가능
 dic_2 = dict()
@@ -16,6 +16,14 @@ for key in keyList:
     dic_2[key] += 1
 
 print(dic_2)  # {'a': 3, 'b': 2, 'c': 1}
+
+# 3. get(key, default) 사용 => 분기처리 필요없어서 매우 유용
+dic_3 = dict()
+for key in keyList:
+    dic_3[key] = dic_3.get(key, 0) + 1  # 기존에 key 있으면 해당 value 받아오고, 없으면 0
+
+print(dic_3)  # {'a': 3, 'b': 2, 'c': 1}
+
 
 # 3. collections 모듈의 Counter 클래스 사용
 dic_3 = Counter("hello world")
