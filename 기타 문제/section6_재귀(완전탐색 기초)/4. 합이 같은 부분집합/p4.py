@@ -1,7 +1,7 @@
 import sys
 
 # in1 ~ in5.txt 파일입력을 쉽게 하기 위한 for문
-for fileNum in range(1, 6):
+for fileNum in range(1, 2):
     print(f"---입력예시 {fileNum}---")
     fileName = f"in{fileNum}.txt"
     sys.stdin = open(fileName, "rt")
@@ -25,7 +25,7 @@ for fileNum in range(1, 6):
             check[v] = 1
             dfs(v + 1)
             # 오른쪽서브트리
-            if v != 1:  # 이 라인에서 v 값이 1 이 들어왔다는 것은 트리의 왼쪽 부분 탐색을 모두 마쳤다는 뜻이므로 멈춰도 된다.
+            if v != 0:  # 이 라인에서 v 값이 0 이 들어왔다는 것은 트리의 왼쪽 부분 탐색을 모두 마쳤다는 뜻이므로 멈춰도 된다.
                 check[v] = 0
                 dfs(v + 1)
 
