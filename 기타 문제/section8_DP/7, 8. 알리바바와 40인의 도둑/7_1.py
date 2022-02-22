@@ -14,6 +14,8 @@ for fileNum in range(1, 6):
     board = [list(map(int, read().split())) for _ in range(n)]
     dp = [[0] * n for _ in range(n)]
 
+    # bottom up
+
     for i in range(n):
         for j in range(n):
             if (i, j) == (0, 0):

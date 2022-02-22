@@ -14,8 +14,8 @@ for fileNum in range(1, 6):
     dp = [0] * (n + 1)
 
     # base case
-    dp[0] = 1
-    dp[1] = 2
+    dp[1] = 1
+    dp[2] = 2
 
     def dfs(i):
         # 부분문제를 이미 풀었다면 정답 바로 return
