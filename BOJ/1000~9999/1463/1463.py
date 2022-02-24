@@ -1,5 +1,8 @@
 import sys
 
+sys.setrecursionlimit(10**6)
+
+
 read = sys.stdin.readline
 
 n = int(read())
@@ -20,20 +23,22 @@ for i in range(4, n + 1):
         if dp[i // 3] + 1 < dp[i]:
             dp[i] = dp[i // 3] + 1
 
+print(dp[n])
+
 
 # def dfs(n):
 #     if dp[n]:
 #         return dp[n]
 #     else:
-#         if n >= 6 and n % 6 == 0:
+#         if n % 6 == 0:
 #             dp[n] = min(dfs(n // 3), dfs(n // 2), dfs(n - 1)) + 1
-#         elif n >= 3 and n % 3 == 0:
+#         elif n % 3 == 0:
 #             dp[n] = min(dfs(n // 3), dfs(n - 1)) + 1
-#         elif n >= 2 and n % 2 == 0:
+#         elif n % 2 == 0:
 #             dp[n] = min(dfs(n // 2), dfs(n - 1)) + 1
 #         else:
 #             dp[n] = dfs(n - 1) + 1
 #         return dp[n]
 
 
-print(dp[n])
+# print(dfs(n))

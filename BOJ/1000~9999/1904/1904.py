@@ -13,4 +13,4 @@ if n == 1:
 elif n == 2:
     print(2)
 else:
-    print(cur % 15746)
+    print(cur)
