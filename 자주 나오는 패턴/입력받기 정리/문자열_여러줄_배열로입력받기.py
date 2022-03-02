@@ -82,17 +82,16 @@ print(maze)
 # 3. 띄어쓰기있는 문자열/정수를 입력받아서 2차원 배열로 저장
 
 K = int(input())
-arr = [list(map(str, sys.stdin.readline().split())) for _ in range(K)]
-# 정수형일 때는 map() 의 첫 번째인자를 int로 바꿔주면 됨
+arr = [sys.stdin.readline().split() for _ in range(K)]
 
 print(K)
 
 # -----------------결과--------------------
 # input:
 """
-  3
-  apple banana mango
-  one two three
+2
+apple banana mango
+one two three
 """
 
 # output:
