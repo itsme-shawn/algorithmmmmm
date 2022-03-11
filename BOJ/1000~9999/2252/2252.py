@@ -1,3 +1,5 @@
+# 2차원배열로 그래프구현 시 메모리초과남
+
 import sys
 from collections import deque
 
