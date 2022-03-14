@@ -19,8 +19,6 @@ def bfs(v):
 
             if x == k:  # 원하는 노드를 발견했지만 이번 레벨 끝까지 돌아야하므로 바로 끝내지는 않는다.
                 flag = 1  # 이번 레벨 끝나고 탈출하기 위해서
-                # res 에 거리 저장 (아래의 for문에 의해서 같은 노드인데도 거리가 달라질 수 있으므로 미리 저장)
-                res = dist
                 cnt += 1  # 개수 증가
 
             for nxt in (x - 1, x + 1, x * 2):
@@ -29,9 +27,9 @@ def bfs(v):
                         deq.append((nxt, dist + 1))  # 거리증가시켜서 큐에 추가
         # 탈출
         if flag == 1:
-            print(res)
+            print(dist)
             print(cnt)
-            sys.exit()
+            break
 
 
 bfs(n)
