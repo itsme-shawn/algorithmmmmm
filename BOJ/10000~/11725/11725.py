@@ -19,14 +19,15 @@ for _ in range(n - 1):
 
 q = deque([1])
 visited = [0] * (n + 1)
+visited[1] = 1
 parent = [0] * (n + 1)
 
 
 while q:
     x = q.popleft()
-    visited[x] = 1
     for node in dic[x]:
         if visited[node] == 0:
+            visited[node] = 1
             parent[node] = x
             q.append(node)
 
