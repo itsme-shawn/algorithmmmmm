@@ -13,7 +13,7 @@ for fileNum in range(1, 6):
     lst.sort()
 
     def binarySearch(lst, target, start=0, end=None):
-        if end == None:
+        if end is None:
             end = len(lst) - 1
         if start > end:
             return False
