@@ -1,4 +1,3 @@
-import string
 import sys
 
 # in1 ~ in5.txt 파일입력을 쉽게 하기 위한 for문
