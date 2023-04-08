@@ -24,5 +24,5 @@ print("제거후길이:", len(replace_t2))
 print(text.replace(" ", ""))
 
 # 공백 제거 하기 1 : strip() 함수 사용
-# 하지만 strip() 은 좌우 양 끝 공백만 제거할 수 있다는 단점이 있음
+# 하지만 strip() 은 좌우 양 끝 공백만 제거할 수 있음
 print(text.strip())

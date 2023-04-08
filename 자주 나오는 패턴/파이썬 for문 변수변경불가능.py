@@ -10,7 +10,7 @@ for i in range(10):
 # 출력 : 0 1 2 3 4 5 6 7 8 9
 
 # 2. 최초 범위(range) 변경 불가능
-# 반복문 변수 뿐만 아니라 iterator 를 range 로 줄 시에는, for문 내부에서 range에 해당하는 객체를 조잭해도 최초 루프 수에 영향을 안 주는듯함.
+# 반복문 변수 뿐만 아니라 iterator 를 range 로 줄 시에는, for문 내부에서 range에 해당하는 객체를 조작해도 최초 루프 수에 영향을 안 주는듯함.
 lst = [1, 2, 3, 4, 5, 6]
 i = 0
 for i in range(len(lst)):
