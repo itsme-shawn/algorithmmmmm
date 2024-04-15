@@ -5,6 +5,7 @@ input = sys.stdin.readline().rstrip
 n, m = map(int, input().split())
 res = [0] * m  # 일단 필요한 길이만큼 생성
 
+
 # res 전역리스트 사용
 def dfs(L):
     if L == m:
