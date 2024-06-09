@@ -2,11 +2,8 @@
 
 using namespace std;
 
+int arr[26];
 int main() {
-  int arr[26] = {
-      0,
-  };
-
   string word = "";
   cin >> word;
 
