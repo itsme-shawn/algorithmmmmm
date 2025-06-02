@@ -1,5 +1,4 @@
 import sys
-from os import lchflags
 
 # in1 ~ in5.txt 파일입력을 쉽게 하기 위한 for문
 for fileNum in range(1, 6):
