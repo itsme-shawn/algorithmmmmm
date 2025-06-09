@@ -1,0 +1,20 @@
+
+import java.io.*;
+import java.util.*;
+
+public class tpl {
+
+    public static int solution() {
+        int ans = 0;
+
+        return ans;
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        // Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(new File("1.txt"));
+        sc.close();
+        System.out.println(solution());
+    }
+
+}
