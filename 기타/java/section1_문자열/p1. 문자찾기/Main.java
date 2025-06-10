@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.*;
 
-public class p1 {
+public class Main {
 
     public static int solution(String str, char t) {
         // System.out.print(str);
@@ -24,7 +24,7 @@ public class p1 {
 
     public static void main(String[] args) throws FileNotFoundException {
         // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(new File("1.txt"));
+        Scanner sc = new Scanner(new File("in_1.txt"));
         String str = sc.next();
         char c = sc.next().charAt(0);
         sc.close();

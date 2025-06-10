@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 // 자바 답안 템플릿
-public class tpl {
+public class Main {
 
     public static int solution() {
         int ans = 0;
