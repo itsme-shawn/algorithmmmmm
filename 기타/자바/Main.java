@@ -1,4 +1,3 @@
-package 기타.java;
 import java.io.*;
 import java.util.*;
 
@@ -12,8 +11,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        // Scanner sc = new Scanner(System.in);
-        Scanner sc = new Scanner(new File("1.txt"));
+         Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(new File("1.txt"));
         sc.close();
         System.out.println(solution());
     }

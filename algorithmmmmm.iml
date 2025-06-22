@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.8" />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/기타/자바" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/코테언어별 팁" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BOJ" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/codetree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/기타" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/시험" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/알고리즘 기초" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Python 3.8 interpreter library" level="application" />
+  </component>
+</module>
