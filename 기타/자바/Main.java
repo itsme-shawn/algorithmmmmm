@@ -1,4 +1,4 @@
-
+package 기타.java;
 import java.io.*;
 import java.util.*;
 
