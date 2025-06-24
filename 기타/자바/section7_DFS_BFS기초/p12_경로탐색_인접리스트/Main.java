@@ -7,7 +7,8 @@ public class Main {
 
     static int target = 5;
     static boolean[] visited;
-    static int[][] graph;
+    // static int[][] graph; // 인접행렬 대신 아래의 인접리스트로 대체
+    static List<List<Integer>> graph;
     static List<Integer> path;
     static int cnt = 0; // 최종 경로 개수
     static int N;
@@ -17,33 +18,31 @@ public class Main {
             cnt++;
             System.out.println("path: " + path); // 경로 출력
         } else {
-            for (int i = 1; i <= N; i++) {
-                if (!visited[i] && graph[v][i] == 1) {
-                    path.add(i);
-                    visited[i] = true;
-                    dfs(i);
+            for (int nv : graph.get(v)) {
+                if (!visited[nv]) {
+                    path.add(nv);
+                    visited[nv] = true;
+                    dfs(nv);
                     path.remove(path.size() - 1);
-                    visited[i] = false;
+                    visited[nv] = false;
                 }
             }
         }
     }
 
     public static int solution(int n, int[][] edges) {
-        graph = new int[n + 1][n + 1];
+        graph = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
         for (int[] edge : edges) {
             int from = edge[0];
             int to = edge[1];
-            graph[from][to] = 1;
+            graph.get(from).add(to);
         }
 
-        // // 그래프 출력
-        // for (int i = 1; i < n + 1; i++) {
-        //     for (int j = 1; j < n + 1; j++) {
-        //         System.out.print(graph[i][j] + " ");
-        //     }
-        //     System.out.println();
-        // }
         visited = new boolean[n + 1];
         for (int i = 1; i <= n; i++) {
             visited[i] = false;
