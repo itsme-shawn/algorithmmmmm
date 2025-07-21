@@ -20,7 +20,7 @@ public class Main {
             }
         }
 
-        return Arrays.toString(ans);
+        return Arrays.toString(ans); 
     }
 
     public static void main(String[] args) throws FileNotFoundException {
