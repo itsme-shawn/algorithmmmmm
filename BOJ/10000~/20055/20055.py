@@ -18,11 +18,11 @@ zero_cnt = 0
 stage = 1
 
 # 올리는 칸에 로봇 올리기
-if belt[0][0] > 0:
-    belt[0][0] -= 1
-    belt[0][1] = 1  # 로봇 올리기
-    if belt[0][0] == 0:
-        zero_cnt += 1
+# if belt[0][0] > 0:
+#     belt[0][0] -= 1
+#     belt[0][1] = 1  # 로봇 올리기
+#     if belt[0][0] == 0:
+#         zero_cnt += 1
 
 while True:
     # 벨트 회전
