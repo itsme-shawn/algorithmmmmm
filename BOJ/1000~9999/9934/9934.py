@@ -1,43 +1,28 @@
-import heapq as hq
-import sys
+# 직접 이진트리 순회하면서 값 저장하기
 
+import sys
+# sys.stdin = open("in.txt", "r")
 read = sys.stdin.readline
 
-# left -> root -> right
-
 k = int(read())
-visit = list(map(int, read().split()))
-ans = []
+nodes = list(map(int, read().split()))
 
+tree = [0] * (2**k-1)
 
-# def rec(start, end):
-#     mid = (start + end) // 2
-#     ans.append(visit[mid])
-#     print("ans :", ans)
-#     if start == end:
-#         return
-#     rec(start, mid - 1)
-#     rec(mid + 1, end)
+# tree = list(range(1,2**k))
 
+i = 0
 
-# rec(0, 2**k - 2)
+def mid_order(n):
+    global i
+    if n < 2**k - 1:
+        mid_order(n*2 + 1)
+        # print(tree[n])
+        tree[n] = nodes[i]
+        i += 1
+        mid_order(n*2 + 2)
 
+mid_order(0)
 
-"""
-k = 3
-0 1 2 3 4 5 6
-1 6 4 3 5 2 7
-
-3 / 1 5 / 0 2 4 6
-
-(2**3-2)/2
-
-
-k = 4
-0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 
-
-7 / 3 11 / 1 5 9 13 / 0 2 4 6 8 10 12 14
-
-(2**4)
-
-"""
+for j in range(k):
+    print(" ".join(map(str,tree[2**j-1:2**(j+1)-1])))

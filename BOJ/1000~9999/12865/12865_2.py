@@ -7,7 +7,7 @@ read = sys.stdin.readline
 
 n,k = map(int, read().split()) # 물품수, 가방의 한계무게
 items = [list(map(int, read().split())) for _ in range(n)] # 무게, 가치
-items.insert(0,0) # 1-index
+items.insert(0,[0]) # 1-index
 
 dp = [[0] * (k+1) for _ in range(n+1)]
 
