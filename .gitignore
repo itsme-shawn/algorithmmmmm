@@ -6,3 +6,4 @@ test/
 코테언어별 팁/c++
 코테언어별 팁/자바
 **/*.imi
+.github/copilot-instructions.md
