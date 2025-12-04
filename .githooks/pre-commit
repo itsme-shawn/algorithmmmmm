@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+# Keep README_sync.md in sync with README/problem md state before committing.
+python generate_readme_sync.py
+
+# Stage the regenerated file if it changed.
+git add README_sync.md
+
+# 최초 적용 시에 아래 커맨드 입력
+# git config core.hooksPath .githooks
